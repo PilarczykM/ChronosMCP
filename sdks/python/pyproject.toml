@@ -7,3 +7,30 @@ requires-python = ">=3.10"
 dependencies = [
     "mcp[cli]>=1.10.1",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "ruff>=0.12.2",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "D"] # Extend with desired lint rules
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["D", "PD"]
+"web/*.py" = ["D", "PD"]
+"cli/*.py" = ["D", "PD"]
+"**/__init__.py" = ["D", "PD"]
+"**/*.py" = ["D100"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

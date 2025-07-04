@@ -16,7 +16,7 @@ def now(zone: str = None):
     ----------
     zone : str, optional
         The timezone string (e.g., "Europe/London", "America/NewYork").
-        If None, the default timezone of the system will be used (though the `tools.now` function currently requires a zone).
+        If None, the default timezone is "Europe/London".
 
     Returns
     -------
